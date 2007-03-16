@@ -6,15 +6,16 @@
 %define	pdir	Sub
 %define	pnam	Assert
 Summary:	Sub::Assert - Design-by-contract like pre- and postconditions, etc.
-#Summary(pl):	
+Summary(pl.UTF-8):	Sub::Assert - warunki przed i po wywołaniu w stylu projektowania przez kontrakt
 Name:		perl-Sub-Assert
 Version:	1.22
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Sub/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c3df6dba6cc6dec679fabebea6d09c39
+URL:		http://search.cpan.org/dist/Sub-Assert/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -42,10 +43,24 @@ too, but as stated previously, this is a workaround in case you
 want the verification at development time, but prefer speed in
 production without refactoring your code.
 
+%description -l pl.UTF-8
+Celem modułu Sub::Assert jest zapewnienie warunków sprawdzanych przed
+i po wywołaniu procedur, w stylu projektowania przez kontrakt
+(design-by-contract). Ponadto umożliwia on restrykcje dla kontekstu
+wywoływania procedur.
 
+Jest jeden duży problem: jest wolny. Dla każdego wywołania procedury
+z assert() płaci się za sprawdzenie błędu dodatkowy wywołaniem
+procedury, pewną ilością pamięci i wykonaniem dodatkowego kodu.
 
-# %description -l pl
-# TODO
+Na szczęście jest obejście tego problemu dla dojrzałego oprogramowania
+nie wymagające modyfikowania dużej ilości kodu. Zamiast użycia (use)
+Sub::Assert można użyć Sub::Assert::Nothing i pozostawić instrukcje
+zapewnień. O ile nadal będą wywoływane funkcje assert(), nie będzie
+już narzutu sprawdzania warunków przed i po wywołaniach. Oczywiście
+traci się wtedy korzyści, ale, jak napisano wcześniej, jest to
+obejście w przypadku kiedy chcemy kontroli w czasie rozwijania
+oprogramowania, a preferujemy szybkość w produkcji.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
