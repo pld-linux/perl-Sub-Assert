@@ -8,13 +8,13 @@
 Summary:	Sub::Assert - Design-by-contract like pre- and postconditions, etc.
 Summary(pl.UTF-8):	Sub::Assert - warunki przed i po wywołaniu w stylu projektowania przez kontrakt
 Name:		perl-Sub-Assert
-Version:	1.22
+Version:	1.23
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Sub/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c3df6dba6cc6dec679fabebea6d09c39
+# Source0-md5:	e90f4c875a3e4a3d91579165c14337e1
 URL:		http://search.cpan.org/dist/Sub-Assert/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
